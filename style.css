@@ -1,0 +1,117 @@
+body {
+    background-color: #f0f8ff;
+    color: #333;
+    font-family: 'Hiragino Maru Gothic ProN', 'Rounded M+ 1c', 'Comic Sans MS', sans-serif;
+    text-align: center;
+    padding: 50px 20px;
+    overflow-x: hidden;
+}
+
+h1 {
+    font-size: 2.5em;
+    color: #ff69b4;
+    margin-bottom: 5px;
+}
+
+h2 {
+    font-size: 1.2em;
+    color: #888;
+    margin-bottom: 40px;
+}
+
+p {
+    font-size: 1.2em;
+    line-height: 2.5;
+    margin-bottom: 20px;
+}
+
+.box {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    max-width: 600px;
+    margin: 0 auto;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes kunekune {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    25% {
+        transform: translateY(-4px) rotate(-3deg);
+    }
+    50% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    75% {
+        transform: translateY(4px) rotate(3deg);
+    }
+    100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+}
+
+.kune-char {
+    display: inline-block;
+    animation: kunekune 1.5s infinite ease-in-out;
+}
+
+
+/* --- 追加部分 --- */
+
+#main-title {
+    touch-action: none;
+    /* スマホで触った際の画面スクロールを防止 */
+    user-select: none;
+    /* 文字が選択されるのを防止 */
+    -webkit-user-select: none;
+}
+
+
+/* --- 3D用の追加スタイル --- */
+
+.kune-button {
+    margin-top: 30px;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(45deg, #ff69b4, #00bfff);
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s;
+}
+
+.kune-button:hover {
+    transform: scale(1.05) rotate(-2deg);
+}
+
+#webgl-container {
+    display: none;
+    /* 最初は隠しておく */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9999;
+    /* 一番手前に表示 */
+    background-color: #a0d8ef;
+    /* 表示されるまでの水色 */
+}
+
+#exit-3d-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    font-size: 1em;
+    background: rgba(255, 255, 255, 0.8);
+    border: 2px solid #333;
+    border-radius: 10px;
+    cursor: pointer;
+    z-index: 10000;
+}
