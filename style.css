@@ -91,16 +91,16 @@ p {
 
 #webgl-container {
     display: none;
-    /* 最初は隠しておく */
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
-    height: 100vh;
+    height: 100dvh;
+    overflow: hidden;
     z-index: 9999;
-    /* 一番手前に表示 */
+
     background-color: #a0d8ef;
-    /* 表示されるまでの水色 */
+
 }
 
 #exit-3d-btn {
