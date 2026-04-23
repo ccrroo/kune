@@ -51,7 +51,7 @@
                 (!isAnimating) return; let clientX=event.clientX || (event.touches && event.touches[0].clientX); let clientY=event.clientY || (event.touches && event.touches[0].clientY); if (clientX===undefined) return; mouse.x=( clientX / window.innerWidth)
                 * 2 - 1; mouse.y=- (clientY / window.innerHeight) * 2 + 1; raycaster.setFromCamera(mouse, camera); const intersects=raycaster.intersectObjects(planes); if (intersects.length>
                 0) { intersects[0].object.userData.wiggleIntensity = 3.0; intersects[0].object.userData.wiggleSpeed += 2.0; } } window.addEventListener('mousedown', onInteract); window.addEventListener('touchstart', onInteract, {passive: false}); window.addEventListener('resize',
-                () => { camera.aspect = window.innerWidth / window.innerHeight; camera.updateProjectionMatrix(); renderer.setSize(window.innerWidth, window.innerHeight); }); enterBtn.addEventListener('click', () => { container.appendChild(renderer.domElement);
+                () => { camera.aspect = window.innerWidth / window.innerHeight; camera.updateProjectionMatrix(); renderer.setSize(window.innerWidth, window.innerHeight);renderer.setPixelRatio(window.devicePixelRatio); }); enterBtn.addEventListener('click', () => { container.appendChild(renderer.domElement);
                 container.style.display = 'block'; isAnimating = true; clock.start(); animate(); }); exitBtn.addEventListener('click', () => { container.style.display = 'none'; isAnimating = false; });
     </script>
 
